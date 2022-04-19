@@ -17,6 +17,7 @@ public class UserDao {
         Session session = sessionFactory.getCurrentSession();
         org.hibernate.query.Query query = session.createQuery("from UserEntity ");
         List<UserEntity> res = query.list();
+        System.out.println("gitt");
         return res;
     }
     public Integer saveOne(UserEntity userEntity) {

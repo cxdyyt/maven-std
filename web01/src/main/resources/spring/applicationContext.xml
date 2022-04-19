@@ -39,6 +39,13 @@
     </bean>
 
     <mvc:default-servlet-handler />
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.jh.interceptors.FirstInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <mvc:view-controller path="/viewCtest" view-name="viewCtest"></mvc:view-controller>
     <!--重要！配置swagger资源不被拦截-->
     <!--<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
     <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />-->
